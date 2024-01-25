@@ -1,0 +1,182 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background: #022004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+
+}
+.xmas-tree {
+    position : relative;
+    width: 500px;
+    height: 580px;
+    z-index: -2;
+    border-radius: 50%;
+    
+    
+
+}
+
+.star {
+    z-index: 3;
+    position : absolute;
+    left: 50%;
+    top: 15%;
+    font-size: 40px;
+    color: yellow;
+    animation: spin 5s infinite linear forwards;
+    /* linear: tuyến tính, nghĩa là di chuyển diễn ra một cách đều,
+        không có sự gia tăng hoặc giảm 
+        forward: Là một giá trị fill-mode. Nếu bạn chỉ đị
+        nh forwards, nó sẽ giữ lại trạng thái 
+        cuối cùng của animation khi nó kết thúc.*/
+    text-shadow: 0 0 20px rgb(214, 235, 28);
+    margin-left: -22px;
+
+}
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+    
+}
+
+.t1 {
+    position: absolute;
+    z-index: 2;
+    border-bottom: 100px solid rgb(41, 180, 13);
+    border-right: 100px solid transparent;
+    border-left: 100px solid transparent;
+    margin-left: -100px;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    top : 20%;
+    left: 50%;
+}
+
+.t2 {
+        position: absolute;
+            z-index: 1;
+            border-bottom: 125px solid rgb(41, 143, 20);
+            border-right: 125px solid transparent;
+            border-left: 125px solid transparent;
+            margin-left: -125px;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            top: 28%;
+            left: 50%;
+}
+
+.t3 {
+    position: absolute;
+        z-index: 0;
+        border-bottom: 150px solid rgb(33, 100, 19);
+        border-right: 150px solid transparent;
+        border-left: 150px solid transparent;
+        margin-left: -150px;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        top: 36%;
+        left: 50%;
+}
+.t1::after,
+.t1::before,
+.t2::after,
+.t2::before,
+.t3::after,
+.t3::before {
+    position: absolute;
+    background: rgb(202, 202, 42);
+    width: 10px;
+    height: 20px;
+    content: "";
+    border-radius: 50%;
+    animation: blink 5s infinite linear;
+}
+.t1::before {
+    top: 80px;
+    left: -83px;
+    animation-delay: 0.5s;
+    
+}
+.t2::before {
+    top: 100px;
+    left: -104px;
+    animation-delay: 1s;
+}
+.t3::before {
+    top: 120px;
+    left: -123px;
+    animation-delay: 1.5s;
+}
+.t1::after {
+    top: 80px;
+    left: 74px;
+    animation-delay: 0.5s;
+}
+.t2::after {
+    top: 100px;
+    left: 94px;
+    animation-delay: 1s;
+}
+.t3::after {
+    top: 120px;
+    left: 114px;
+    animation-delay: 1.5s;
+
+}
+@keyframes blink {
+    30% {
+        background: rgb(24, 113, 216);
+        text-shadow: 0 0 20px rgb(24, 113, 216);
+    }
+        60% {
+            background: rgb(165, 32, 32);
+            text-shadow: 0 0 20px rgb(171, 173, 13);
+        }
+
+    
+}
+.trunk {
+    position: absolute;
+    width: 40px;
+    height: 100px;
+    background: rgb(85, 39, 9);
+    top: 50%;
+    left: 50%;
+    margin-left: -20px;
+    z-index: -1;
+}
+
+.ground {
+    position: absolute;
+    width: 120px;
+    height: 35px;
+    background: white;
+    top: 64%;
+    left: 50%;
+    margin-left: -60px;
+    border-radius: 50%;
+    z-index: -2;
+
+}
+.snow {
+    position: absolute;
+    top: -30px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: snow;
+    animation: fall linear;
+    text-shadow: 0 0 20px white;
+    
+}
+@keyframes fall {
+    to {
+        transform: translate(0,105vh);
+    }
+    
+}
